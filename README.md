@@ -103,6 +103,23 @@ Invoke-RestMethod -Uri http://localhost:8000/chat `
   -Body '{"message":"Plan a 5 day trip from Dhaka to Japan"}'
 ```
 
+## MCP Server
+
+The project includes an MCP server with async tools for flight and hotel search.
+The synchronous external API calls run in worker threads so they do not block the MCP event loop.
+
+Run the async client test with the project environment:
+
+```powershell
+python mcp_clientTest.py
+```
+
+The MCP server uses stdio transport and is started automatically by the test client:
+
+```powershell
+python mcp_server.py
+```
+
 ## Project Structure
 
 ```text
@@ -113,6 +130,8 @@ tools/flight_tool.py   AviationStack flight search
 static/                Frontend assets
 templates/             HTML frontend
 Dockerfile             Container image definition
+mcp_server.py          Async MCP server exposing travel tools
+mcp_clientTest.py      Async MCP stdio client test
 ```
 
 ## Troubleshooting
