@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Travel AI</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Chat history">
+      <div class="sidebar-top">
+        <a class="brand" href="/" aria-label="Travel AI home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>waypoint</span>
+        </a>
+        <button class="icon-button close-sidebar" id="closeSidebar" type="button" aria-label="Close sidebar" title="Close sidebar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <button class="new-chat" id="newChat" type="button">
+        <span class="plus-icon" aria-hidden="true">+</span>
+        <span>New chat</span>
+        <span class="shortcut">Ctrl K</span>
+      </button>
+      <div class="history-heading">Your trips</div>
+      <nav class="chat-list" id="chatList" aria-label="Recent chats"></nav>
+      <div class="sidebar-bottom">
+        <div class="profile-avatar" aria-hidden="true">W</div>
+        <div class="profile-copy"><strong>Travel planner</strong><span>AI assistant</span></div>
+        <span class="online-dot" title="Ready"></span>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" type="button" aria-label="Open sidebar" title="Open sidebar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="topbar-title">Travel assistant <span class="topbar-caret" aria-hidden="true">⌄</span></div>
+        <div class="topbar-right"><span class="status-dot"></span><span>Ready to plan</span></div>
+      </header>
+
+      <section class="conversation" id="conversation" aria-live="polite" aria-label="Conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-mark" aria-hidden="true"><span></span></div>
+          <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+          <h1>Where would you<br class="desktop-break"> like to go?</h1>
+          <p class="welcome-copy">Tell me what you have in mind. I can help with flights, stays, and a trip plan that fits your style.</p>
+          <div class="suggestions" aria-label="Suggested prompts">
+            <button class="suggestion" type="button" data-prompt="Plan a 5-day trip to Tokyo from Dhaka on a moderate budget">
+              <span class="suggestion-icon city-icon" aria-hidden="true">↗</span>
+              <span><strong>Explore a new city</strong><small>Plan 5 days in Tokyo</small></span>
+            </button>
+            <button class="suggestion" type="button" data-prompt="Plan a relaxing 4-day beach trip to Bali from Dhaka">
+              <span class="suggestion-icon beach-icon" aria-hidden="true">~</span>
+              <span><strong>Find a little sunshine</strong><small>Build a Bali getaway</small></span>
+            </button>
+            <button class="suggestion" type="button" data-prompt="Create a budget-friendly 7-day trip to India from Dhaka">
+              <span class="suggestion-icon compass-icon" aria-hidden="true">◎</span>
+              <span><strong>Make every taka count</strong><small>Budget trip to India</small></span>
+            </button>
+          </div>
+        </div>
+        <div class="message-list" id="messageList"></div>
+      </section>
+
+      <div class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" placeholder="Message your travel assistant" aria-label="Message your travel assistant"></textarea>
+          <div class="composer-bottom">
+            <span class="composer-hint">Travel planning, made personal</span>
+            <button class="send-button" id="sendButton" type="submit" aria-label="Send message" title="Send message">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg>
+            </button>
+          </div>
+        </form>
+        <p class="disclaimer">AI can make mistakes. Check important travel details before booking.</p>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
